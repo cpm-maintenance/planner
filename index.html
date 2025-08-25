@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Integrasi Apps Script</title>
+</head>
+<body>
+  <h1>Konten dari Apps Script:</h1>
+  <div id="content">Memuat...</div>
+
+  <script>
+    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycby968ddYWxwGhP8FzCUJAp0JFnFHj3nEDV-f24OEH_NBqQIcuTJ-4vtMaeCntTAa_Y/exec'; // Ganti dengan URL Apps Script Anda
+
+    fetch(appsScriptUrl)
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('content').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('content').innerHTML = 'Gagal memuat konten.';
+      });
+  </script>
+</body>
+</html>
